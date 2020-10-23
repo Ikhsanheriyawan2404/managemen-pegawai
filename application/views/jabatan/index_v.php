@@ -13,7 +13,7 @@
             <tr>
               <th>No</th>
               <th>Nama Jabatan</th>
-              <th>Aksi</th>
+              <th class="text-center" width="60"><i class="fas fa-cogs"></i></th>
             </tr>
           </thead>
           <tbody>

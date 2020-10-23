@@ -30,10 +30,8 @@ class PegawaiController extends MainController {
 			$row[] = $p['tgl_lahir'];
 			$row[] = $p['name'];
 			$row[] = $p['keterangan'];
-			$row[] = "<div class='d-flex justify-content-between'>
-				<a class='btn btn-success btn-sm text-white' onclick='editForm($p[pegawai_id])'><i class='fa fa-pencil-alt'></i> Edit</a>
-                <a class='btn btn-danger btn-sm text-white' onclick='deleteData($p[pegawai_id], \"$p[foto]\")'><i class='fa fa-trash'></i> Hapus</a>
-                </div>";
+			$row[] = "<a class='btn btn-success btn-sm text-white' onclick='editForm($p[pegawai_id])'><i class='fa fa-pencil-alt'></i></a>
+                <a class='btn btn-danger btn-sm text-white' onclick='deleteData($p[pegawai_id], \"$p[foto]\")'><i class='fa fa-trash'></i></a>";
 			$data[] = $row;
 		}
 

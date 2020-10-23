@@ -22,8 +22,10 @@ class JabatanController extends MainController {
 			$row = [];
 			$row[] = $no++;
 			$row[] = $j['name'];
-			$row[] = "<a class='btn btn-success btn-sm text-white' onclick='editForm($j[jabatan_id])'><i class='fa fa-pencil-alt'></i></a>
-                <a class='btn btn-danger btn-sm text-white' onclick='deleteData($j[jabatan_id])'><i class='fa fa-trash'></i></a>";
+			$row[] = "<a class='btn btn-success btn-sm text-white' onclick='editForm($j[jabatan_id])'><i class='fa fa-pencil-alt'></i>
+					</a>
+					<a class='btn btn-danger btn-sm text-white' onclick='deleteData($j[jabatan_id])'><i class='fa fa-trash'></i>
+					</a>";
 			$data[] = $row;
 		}
 

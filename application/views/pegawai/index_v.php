@@ -18,7 +18,7 @@
               <th>Tanggal Lahir</th>
               <th>Jabatan</th>
               <th>Keterangan</th>
-              <th class="text-center" width="120"><i class="fa fa-cogs"></i></th>
+              <th class="text-center" width="60"><i class="fa fa-cogs"></i></th>
             </tr>
           </thead>
           <tbody>
