@@ -3,7 +3,7 @@
     <div class="card-header py-3">
       <div class="d-flex justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">Data Pegawai</h6>
-        <a class="btn btn-primary btn-sm text-white" onclick="addForm()"><i class="fa fa-user-plus"></i> Tambah</a>
+        <a class="btn btn-primary btn-sm text-white" onclick="addForm()"><i class="fa fa-user-plus"></i></a>
       </div>
     </div>
     <div class="card-body">
@@ -80,6 +80,9 @@
     {
       save_method = 'add';
       $('#modalForm').modal('show');
+      setTimeout(function () {
+        $('#nama_pegawai').focus();
+      }, 1000);
       $('#modalForm form')[0].reset();                
       $('#modalTitle').text('Tambah Pegawai');
       $('.tampil-foto').html("");
@@ -91,10 +94,13 @@
       $('#modalForm form')[0].reset();
       $.ajax({
         url : "<?= BASE_PATH ?>/pegawai/edit/"+id,
-        type : "GET",
+        type : "POST",
         dataType : "JSON",
         success : function(data) {
           $('#modalForm').modal('show');
+          setTimeout(function () {
+            $('#nama_pegawai').focus();
+          }, 1000);
           $('#modalTitle').text('Edit Pegawai');
 
           $('#id').val(data.pegawai_id);
@@ -122,7 +128,7 @@
       if (confirm('Apakah yakin ingin menghapus data?')) {
         $.ajax({
           url : "<?= BASE_PATH ?>/pegawai/delete/"+id+"/"+foto,
-          type : "GET",
+          type : "POST",
           success : function(data){
             table.ajax.reload();
           },

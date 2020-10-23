@@ -69,6 +69,9 @@
     {
       save_method = "add";
       $('#modalForm').modal('show');
+      setTimeout(function() {
+        $('#inputForm').focus();
+      }, 1000);
       $('#modalForm form')[0].reset();                
       $('#modalTitle').text('Tambah Jabatan');
     }
@@ -80,10 +83,13 @@
       $('#modalForm form')[0].reset();
       $.ajax({
         url : "<?= BASE_PATH ?>/jabatan/edit/"+id,
-        type : "GET",
+        type : "POST",
         dataType : "JSON",
         success : function(data) {
           $('#modalForm').modal('show');
+          setTimeout(function() {
+            $('#inputForm').focus();
+          }, 1000);
           $('#modalTitle').text('Edit Jabatan');
 
           $('#id').val(data.jabatan_id);
@@ -101,7 +107,7 @@
       if (confirm("Apakah yakin data akan dihapus?")) {
         $.ajax({
           url : "<?= BASE_PATH ?>/jabatan/delete/"+id,
-          type : "GET",
+          type : "POST",
           success : function(data) {
             table.ajax.reload();
           },

@@ -15,8 +15,8 @@
       <div class="form-group row">
         <label for="name" class="col-sm-4 col-form-label">Nama Jabatan</label>   
         <div class="col-sm-6">
-           <input class="form-control" type="text" id="name" name="name">
-       </div> 
+          <input class="form-control" id="inputForm" type="text" id="name" name="name" required>
+        </div> 
       </div>
 
         </div>
