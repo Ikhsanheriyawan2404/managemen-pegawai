@@ -16,6 +16,7 @@
 
   <!-- Custom styles for this template-->
   <link href="<?= BASE_PATH ?>/sbadmin2/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="<?= BASE_PATH ?>/node_modules/dist/sweetalert2.min.css" rel="stylesheet">
 
   <!-- DataTables -->
   <link rel="stylesheet" href="<?= BASE_PATH ?>/sbadmin2/vendor/datatables/dataTables.bootstrap4.min.css">
@@ -173,6 +174,8 @@
       </div>
     </div>
   </div>
+
+  <script src="<?= BASE_PATH ?>/node_modules/dist/sweetalert2.min.JS"></script>
 
   <!-- Bootstrap core JavaScript-->
   <script src="<?= BASE_PATH ?>/sbadmin2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
