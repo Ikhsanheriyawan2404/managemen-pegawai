@@ -125,18 +125,33 @@
 
     function deleteData(id, foto)
     {
-      if (confirm('Apakah yakin ingin menghapus data?')) {
-        $.ajax({
-          url : "<?= BASE_PATH ?>/pegawai/delete/"+id+"/"+foto,
-          type : "POST",
-          success : function(data){
-            table.ajax.reload();
-          },
-          error : function(){
-           alert("Tidak dapat menghapus data!");
-          }
-        });
-      }
+      Swal.fire({
+        title: 'Apakah kamu yakin?',
+        text: "Data ini akan terhapus permanen!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Hapus!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          $.ajax({
+            url : "<?= BASE_PATH ?>/pegawai/delete/"+id+"/"+foto,
+            type : "POST",
+            success : function(data) {
+              Swal.fire(
+                'Berhasil!',
+                'Data berhasil dihapus.',
+                'success'
+              )
+              table.ajax.reload();
+            },
+            error : function() {
+             alert("Tidak dapat menghapus data!");
+            }
+          });
+        }
+      });
     }
 
   </script>

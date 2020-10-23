@@ -104,17 +104,34 @@
     //Menghapus data dengan AJAX
     function deleteData(id)
     {
-      if (confirm("Apakah yakin data akan dihapus?")) {
-        $.ajax({
-          url : "<?= BASE_PATH ?>/jabatan/delete/"+id,
-          type : "POST",
-          success : function(data) {
-            table.ajax.reload();
-          },
-          error : function() {
-           alert("Tidak dapat menghapus data!");
-          }
-        });
-      }
+      Swal.fire({
+        title: 'Apakah kamu yakin?',
+        text: "Data ini akan terhapus permanen!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Hapus!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          $.ajax({
+            url : "<?= BASE_PATH ?>/jabatan/delete/"+id,
+            type : "POST",
+            success : function(data) {
+              Swal.fire(
+                'Berhasil!',
+                'Data berhasil dihapus.',
+                'success'
+              )
+              table.ajax.reload();
+            },
+            error : function() {
+             alert("Tidak dapat menghapus data!");
+            }
+          });
+        }
+      });
     }
+
+
   </script>

@@ -16,7 +16,10 @@
 
   <!-- Custom styles for this template-->
   <link href="<?= BASE_PATH ?>/sbadmin2/css/sb-admin-2.min.css" rel="stylesheet">
-  <link href="<?= BASE_PATH ?>/node_modules/dist/sweetalert2.min.css" rel="stylesheet">
+
+  <!-- SweetAlert 2 -->
+  <link  rel="stylesheet" href="<?= BASE_PATH ?>/node_modules/sweetalert2/dist/sweetalert2.min.css">
+  <link  rel="stylesheet" href="<?= BASE_PATH ?>/sbadmin2/vendor/sweetalert2/dist/sweetalert2.min.css">
 
   <!-- DataTables -->
   <link rel="stylesheet" href="<?= BASE_PATH ?>/sbadmin2/vendor/datatables/dataTables.bootstrap4.min.css">
@@ -175,7 +178,7 @@
     </div>
   </div>
 
-  <script src="<?= BASE_PATH ?>/node_modules/dist/sweetalert2.min.JS"></script>
+  <script src="<?= BASE_PATH ?>/sbadmin2/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
 
   <!-- Bootstrap core JavaScript-->
   <script src="<?= BASE_PATH ?>/sbadmin2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
